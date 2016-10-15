@@ -18,9 +18,17 @@ from sklearn.metrics import accuracy_score
 from nltk.classify import SklearnClassifier
 from sklearn.naive_bayes import MultinomialNB
 from __future__ import print_function
+from collections import defaultdict
+from nltk.metrics import *
+from nltk.corpus import stopwords
+import nltk, re, pprint
+from nltk import word_tokenize
+from sklearn import svm
+from nltk.classify import SklearnClassifier, NaiveBayesClassifier
+from sklearn.naive_bayes import MultinomialNB
+#from sklearn.metrics import precision_recall_fscore_support
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn import tree
-
 
 workbook = xlrd.open_workbook('try_set1234.xlsx')
 worksheet = workbook.sheet_by_index(0)
