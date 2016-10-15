@@ -127,7 +127,7 @@ print("Pseudocode ", decTree_classifier.pseudocode(depth=6))
 
 
 refset_dec = collections.defaultdict(set)#same as dict but in this we can override a method
-testset_results = collections.defaultdict(set)
+testsets12_dec = collections.defaultdict(set)
 
 for i, (feats, label) in enumerate(testing_set):
     #print(i, feats, label)
