@@ -10,7 +10,6 @@ from sklearn.metrics import classification_report
 from nltk.corpus import stopwords
 import nltk, re, pprint
 from nltk import word_tokenize
-from nltk.tokenize import word_tokenize
 from collections import defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import svm
@@ -21,12 +20,7 @@ from __future__ import print_function
 from collections import defaultdict
 from nltk.metrics import *
 from nltk.corpus import stopwords
-import nltk, re, pprint
-from nltk import word_tokenize
-from sklearn import svm
 from nltk.classify import SklearnClassifier, NaiveBayesClassifier
-from sklearn.naive_bayes import MultinomialNB
-#from sklearn.metrics import precision_recall_fscore_support
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn import tree
 
@@ -64,7 +58,7 @@ def feature_extractor(provided_doc):
     for w in frequent_words:
         features['contain({})'.format(w)]= (w in realtime_doc_words)
     return features
-
+#--------------------------------Naive Bayes------------------------------------
 #train the classifier(Naive Bayes Classifier)
 featuresets = [(feature_extractor(d), c) for (d,c) in documents]
 training_set = featuresets [:1900]
